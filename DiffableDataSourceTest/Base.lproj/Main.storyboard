@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DiffableDataSourceTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KnZ-aX-vql">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="85" id="beF-ov-hQ3" customClass="ItemTableViewCell" customModule="DiffableDataSourceTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beF-ov-hQ3" id="dYc-iw-ZTo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Mq-Yj-Po3">
+                                                    <rect key="frame" x="20" y="20.5" width="44" height="44"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="gVI-99-Czr"/>
+                                                        <constraint firstAttribute="width" constant="44" id="igq-Fu-Bho"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="selected" image="checkmark" catalog="system">
+                                                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="checkBoxTapped:" destination="beF-ov-hQ3" eventType="touchUpInside" id="vXZ-vC-0yP"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jS-up-1Q9">
+                                                    <rect key="frame" x="72" y="32" width="314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Mq-Yj-Po3" secondAttribute="trailing" constant="20" symbolic="YES" id="1cU-yo-5bo"/>
+                                                <constraint firstItem="2jS-up-1Q9" firstAttribute="leading" secondItem="5Mq-Yj-Po3" secondAttribute="trailing" constant="8" symbolic="YES" id="TQ8-UV-0ot"/>
+                                                <constraint firstItem="5Mq-Yj-Po3" firstAttribute="leading" secondItem="dYc-iw-ZTo" secondAttribute="leadingMargin" id="c0H-oE-jkM"/>
+                                                <constraint firstItem="5Mq-Yj-Po3" firstAttribute="centerY" secondItem="dYc-iw-ZTo" secondAttribute="centerY" id="fLc-Zy-eco"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2jS-up-1Q9" secondAttribute="trailing" constant="8" id="mHw-T3-9Es"/>
+                                                <constraint firstItem="2jS-up-1Q9" firstAttribute="centerY" secondItem="dYc-iw-ZTo" secondAttribute="centerY" id="sS5-mv-xNQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkBox" destination="5Mq-Yj-Po3" id="miT-mH-DRe"/>
+                                            <outlet property="nameLabel" destination="2jS-up-1Q9" id="MW4-VU-bc7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3v-y3-boj">
+                                <rect key="frame" x="330" y="798" width="64" height="44"/>
+                                <color key="backgroundColor" red="0.92133218049999999" green="0.4538828519" blue="0.45661205100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="Atb-J8-aEP"/>
+                                    <constraint firstAttribute="height" constant="44" id="ntu-a8-F0T"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Mp-mU-Qe7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="v3v-y3-boj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="3Kg-yg-d0o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KnZ-aX-vql" secondAttribute="trailing" id="3oV-0T-NKc"/>
+                            <constraint firstItem="KnZ-aX-vql" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AyA-et-qLx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v3v-y3-boj" secondAttribute="trailing" constant="20" id="JUW-hL-AHc"/>
+                            <constraint firstItem="KnZ-aX-vql" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M0n-DZ-iZ4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v3v-y3-boj" secondAttribute="bottom" constant="20" id="Ndg-Yb-sCP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KnZ-aX-vql" secondAttribute="bottom" id="mPj-ON-ZU3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="KnZ-aX-vql" id="C5E-8o-215"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
